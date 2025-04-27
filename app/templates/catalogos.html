@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 class="text-center">Catálogos Disponibles</h1>
+
+<!-- Barra de búsqueda -->
+<div class="input-group mb-4">
+  <input type="text" class="form-control" id="searchCatalog" placeholder="Buscar Catálogo...">
+  <button class="btn btn-outline-secondary" type="button">Buscar</button>
+</div>
+
+<!-- Tabla de catálogos -->
+<table class="table table-striped table-bordered" id="catalogosTable">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Catálogo</th>
+      <th>Revistas</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Ejemplo de contenido dinámico -->
+    <tr>
+      <td>1</td>
+      <td>JCR</td>
+      <td>Acta Geophysica, Scientific Journal</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>SCOPUS</td>
+      <td>Journal of Engineering, Acta Geophysica Sinica</td>
+    </tr>
+    <!-- Aquí puedes añadir más filas dinámicamente según tus datos -->
+  </tbody>
+</table>
+
+<script>
+  // Filtro de búsqueda en la tabla
+  document.getElementById('searchCatalog').addEventListener('keyup', function() {
+    let filter = this.value.toLowerCase();
+    let rows = document.querySelectorAll('#catalogosTable tbody tr');
+    
+    rows.forEach(function(row) {
+      let cells = row.getElementsByTagName('td');
+      let catalogo = cells[1].textContent.toLowerCase();
+      if (catalogo.indexOf(filter) > -1) {
+        row.style.display = '';
+      } else {
+        row.style.display = 'none';
+      }
+    });
+  });
+</script>
+{% endblock %}

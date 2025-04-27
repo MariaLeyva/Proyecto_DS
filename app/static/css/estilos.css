@@ -1,0 +1,118 @@
+/* Resetear márgenes y paddings predeterminados */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fondo y color de texto */
+body {
+    font-family: Tahoma, sans-serif;
+    background-color: #ddeeff;  /* Color de fondo claro */
+    color: #333;  /* Color de texto oscuro */
+}
+
+/* Barra de navegación */
+.navbar {
+    background-color: #003366; /* Azul institucional de Unison */
+}
+
+.navbar-brand img {
+    width: 40px;
+    height: 40px;
+}
+
+/* Títulos principales */
+h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #003366; /* Azul institucional */
+    margin-bottom: 20px;
+}
+
+/* Títulos de segundo nivel */
+h2 {
+    font-size: 1.5rem;
+    color: #003366;
+}
+
+/* Alineación central para párrafos y textos */
+.text-center {
+    text-align: center;
+}
+
+/* Contenedor principal */
+.container {
+    margin-top: 40px;
+}
+
+/* Estilos de los botones */
+.btn {
+    background-color: #003366;
+    color: white;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background-color: #005288;
+}
+
+/* Barra de búsqueda */
+.input-group {
+    margin-bottom: 30px;
+}
+
+/* Estilo de las tablas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #003366;
+    color: white;
+}
+
+td {
+    background-color: #f1f1f1;
+}
+
+table tr:nth-child(even) {
+    background-color: #e9ecef;
+}
+
+table tbody tr:hover {
+    background-color: #d6d8db;
+    cursor: pointer;
+}
+
+/* Estilos para los enlaces */
+a {
+    text-decoration: none;
+    color: #003366;
+}
+
+a:hover {
+    color: #005288;
+}
+
+/* Espaciado entre los elementos */
+.mt-4 {
+    margin-top: 40px;
+}
+
+/* Estilos de pie de página o créditos */
+footer {
+    background-color: #003366;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
