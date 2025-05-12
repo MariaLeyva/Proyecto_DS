@@ -1,7 +1,7 @@
-# Sistema web desarrollado en **Python + Flask + Bootstrap** para explorar revistas académicas indexadas en catálogos reconocidos, utilizando datos obtenidos desde **SCIMAGO** y **Resurchify**.
+Sistema web desarrollado en **Python + Flask + Bootstrap** para explorar revistas académicas indexadas en catálogos reconocidos, utilizando datos obtenidos desde **SCIMAGO** y **Resurchify**.
 
-## Funcionalidades 
-### Parte 1: Conversión CSV → JSON 
+Funcionalidades 
+Parte 1: Conversión CSV → JSON 
 - Se procesan archivos desde `datos/csv/areas` y `datos/csv/catalogos`.
 - Se genera un diccionario con estructura:
 json
