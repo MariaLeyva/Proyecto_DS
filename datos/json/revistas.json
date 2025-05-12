@@ -1,0 +1,12 @@
+{
+    "Revista A": {
+        "descripcion": "Descripción de la Revista A",
+        "areas": ["Ciencias Sociales", "Educación"],
+        "catalogos": ["CONACYT", "SCOPUS"]
+    },
+    "Revista B": {
+        "descripcion": "Descripción de la Revista B",
+        "areas": ["Ingeniería", "Ciencias Exactas"],
+        "catalogos": ["JCR", "SCIELO"]
+    }
+}

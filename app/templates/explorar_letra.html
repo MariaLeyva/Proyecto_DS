@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explorar por Letra</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Explorar por Letra: {{ letra }}</h1>
+    </header>
+    <main>
+        {% if revistas %}
+            <ul>
+                {% for titulo, info in revistas.items() %}
+                    <li>
+                        <strong>{{ titulo }}</strong>: {{ info.get('descripcion', 'Sin descripción disponible') }}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No se encontraron revistas que comiencen con la letra '{{ letra }}'.</p>
+        {% endif %}
+    </main>
+    <footer>
+        <p>© 2025 Proyecto DS</p>
+    </footer>
+</body>
+</html>

@@ -2,9 +2,13 @@
 
 {% block title %}Sistema de Exploración de Revistas UNISON{% endblock %}
 
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}?v=20250511">
+{% endblock %}
+
 {% block content %}
 <!-- Hero Section -->
-<div class="jumbotron jumbotron-fluid text-white mb-5" style="background-image: url('/static/images/hero.jpg'); background-size: cover; background-position: center;">
+<div class="jumbotron jumbotron-fluid text-white mb-5 hero-section">
     <div class="container text-center">
         <h1 class="display-4" style="color: black; text-shadow: none;">Explora el Conocimiento</h1>
         <p class="lead" style="color: black;">Descubre revistas científicas de todo el mundo.</p>
@@ -21,10 +25,10 @@
     <div class="col-md-12">
         <div class="card">
             <div class="card-header" style="background-color: var(--primary-color); color: white;">
-                <h5 class="card-title mb-0">Bienvenido al Sistema de Exploración de Revistas</h5>
+                <h5 class="card-title mb-0">Exploración de Revistas</h5>
             </div>
             <div class="card-body">
-                <p>Este sistema está diseñado para facilitar la búsqueda y exploración de revistas científicas de todo el mundo. Aquí podrás encontrar información detallada sobre revistas indexadas en diferentes catálogos, explorar por áreas temáticas, y acceder a indicadores bibliométricos como el H-Index.</p>
+                <p>Este sistema está diseñado para facilitar la búsqueda y exploración de revistas científicas. Aquí podrás encontrar información detallada sobre revistas indexadas en diferentes catálogos, explorar por áreas temáticas, y acceder a indicadores bibliométricos como el H-Index.</p>
                 <p>Además, te mantendremos informado con las últimas noticias y actualizaciones del mundo académico y científico. ¡Explora y descubre el conocimiento con nosotros!</p>
             </div>
         </div>
@@ -71,42 +75,6 @@
             </div>
         </div>
     </div>
-
-    <!-- Noticias Section -->
-    <div class="col-md-4 mb-4">
-        <div class="card h-100">
-            <div class="card-header" style="background-color: var(--primary-color); color: white;">
-                <i class="fas fa-newspaper fa-2x"></i>
-                <h5 class="card-title mt-2">Noticias</h5>
-            </div>
-            <div class="card-body">
-                <p class="card-text">Mantente informado con las últimas noticias y actualizaciones del mundo académico y científico.</p>
-                <a href="{{ url_for('newnoticias') }}" class="btn btn-outline-primary">Ver Noticias</a>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Acerca del Sistema -->
-<div class="row mt-4">
-    <div class="col-md-12">
-        <div class="card">
-            <div class="card-header bg-dark text-white">
-                <h5 class="card-title mb-0">Acerca del Sistema</h5>
-            </div>
-            <div class="card-body">
-                <p>Este sistema permite explorar y buscar en el catálogo de revistas científicas, utilizando información de SCImago Journal Rank (SJR) y otros índices importantes. Características principales:</p>
-                <ul>
-                    <li>Búsqueda por áreas temáticas</li>
-                    <li>Filtrado por catálogos de indexación</li>
-                    <li>Exploración alfabética</li>
-                    <li>Información detallada de cada revista</li>
-                    <li>Indicadores bibliométricos (H-Index)</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
 
 <!-- Noticias o Actualizaciones -->
 <div class="row mt-4">

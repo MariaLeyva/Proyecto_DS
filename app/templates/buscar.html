@@ -39,18 +39,12 @@
                             </td>
                             <td>
                                 {% for catalogo in info['catalogos'] %}
-                                <a href="{{ url_for('catalogo_detalle', catalogo=catalogo) }}" 
-                                   class="badge bg-secondary text-decoration-none me-1">
-                                    {{ catalogo }}
-                                </a>
+                                    {{ catalogo }}{% if not loop.last %}, {% endif %}
                                 {% endfor %}
                             </td>
                             <td>
                                 {% for area in info['areas'] %}
-                                <a href="{{ url_for('area_detalle', area=area) }}" 
-                                   class="badge bg-secondary text-decoration-none me-1">
-                                    {{ area }}
-                                </a>
+                                    {{ area }}{% if not loop.last %}, {% endif %}
                                 {% endfor %}
                             </td>
                         </tr>
@@ -59,9 +53,7 @@
                 </table>
             </div>
             {% else %}
-            <div class="alert alert-info">
-                No se encontraron revistas que coincidan con "{{ request.args.get('q') }}".
-            </div>
+            <p>No se encontraron revistas que coincidan con la búsqueda.</p>
             {% endif %}
         {% else %}
         <div class="text-center">

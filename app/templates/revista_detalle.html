@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle de Revista</title>
+</head>
+<body>
+    <h1>Detalle de Revista</h1>
+    <h2>{{ titulo }}</h2>
+    <p><strong>Información de la revista:</strong></p>
+    <ul>
+        {% for key, value in revista.items() %}
+        <li><strong>{{ key }}:</strong> {{ value }}</li>
+        {% endfor %}
+    </ul>
+
+    <p><strong>Información SCImago:</strong></p>
+    <ul>
+        {% for key, value in scimagojr.items() %}
+        <li><strong>{{ key }}:</strong> {{ value }}</li>
+        {% endfor %}
+    </ul>
+
+    <a href="/">Volver al inicio</a>
+</body>
+</html>

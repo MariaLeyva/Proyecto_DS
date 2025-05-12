@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo General</title>
+</head>
+<body>
+    <h1>Catálogo General</h1>
+
+    {% if catalogo_general %}
+        <ul>
+        {% for titulo, info in catalogo_general.items() %}
+            <li>
+                <strong>{{ titulo }}</strong>
+                {% if info.catalogos %}
+                    <p>Catálogos: {{ info.catalogos | join(', ') }}</p>
+                {% endif %}
+                {% if info.areas %}
+                    <p>Áreas: {{ info.areas | join(', ') }}</p>
+                {% endif %}
+            </li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No hay datos disponibles en el catálogo general.</p>
+    {% endif %}
+
+    <a href="/">Volver al inicio</a>
+</body>
+</html>

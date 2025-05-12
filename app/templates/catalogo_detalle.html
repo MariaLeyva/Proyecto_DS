@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle del Catálogo</title>
+</head>
+<body>
+    <h1>Catálogo: {{ catalogo }}</h1>
+
+    {% if revistas %}
+        <ul>
+        {% for titulo, info in revistas.items() %}
+            <li>
+                <strong>{{ titulo }}</strong>: {{ info.descripcion }}
+            </li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No hay revistas disponibles en este catálogo.</p>
+    {% endif %}
+
+    <a href="/catalogos">Volver a Catálogos</a>
+</body>
+</html>

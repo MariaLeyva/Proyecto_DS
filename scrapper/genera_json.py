@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-import pandas as pd
+import pandas as pd # type: ignore
 import json
 from pathlib import Path
 import os
 import unicodedata
-import chardet
+import chardet # type: ignore
 
 # Definir rutas base
 BASE_DIR = Path(__file__).parent.parent
