@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+
+{% block title %}Perfil - UNISON{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h1 class="text-white bg-primary py-3">Bienvenido, {{ user }}</h1>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-md-4 text-center">
+            <img src="{{ url_for('static', filename='images/profile_picture.jpg') }}" alt="Foto de perfil" class="img-thumbnail rounded-circle" style="width: 150px; height: 150px;">
+            <h5 class="mt-3">Juan Pérez</h5>
+        </div>
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Información Personal</h5>
+                    <p class="card-text"><strong>Sexo:</strong> Masculino</p>
+                    <p class="card-text"><strong>Edad:</strong> 30 años</p>
+                    <p class="card-text"><strong>Correo Electrónico:</strong> juan.perez@example.com</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Revistas Guardadas</h5>
+                    <ul class="list-group">
+                        <li class="list-group-item">Revista de Ciencias Sociales</li>
+                        <li class="list-group-item">Revista de Ingeniería</li>
+                        <li class="list-group-item">Revista de Ciencias Exactas</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Actividad Reciente</h5>
+                    <ul class="list-group">
+                        <li class="list-group-item">Comentaste en "Revista de Ciencias Sociales"</li>
+                        <li class="list-group-item">Guardaste "Revista de Ingeniería"</li>
+                        <li class="list-group-item">Leíste "Revista de Ciencias Exactas"</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Comentarios Recientes</h5>
+                    <ul class="list-group">
+                        <li class="list-group-item">"Muy interesante el artículo sobre ciencias sociales." - Revista de Ciencias Sociales</li>
+                        <li class="list-group-item">"Gran aporte en el campo de la ingeniería." - Revista de Ingeniería</li>
+                        <li class="list-group-item">"Me ayudó mucho en mi investigación." - Revista de Ciencias Exactas</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Archivos Guardados</h5>
+                    <ul class="list-group">
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <span>Archivo 1 - Ciencias Sociales</span>
+                            <a href="{{ url_for('static', filename='datos/csv/areas/CIENCIAS_SOC RadGridExport.csv') }}" class="btn btn-primary btn-sm" target="_blank">Leer</a>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <span>Archivo 2 - Ingeniería</span>
+                            <a href="{{ url_for('static', filename='datos/csv/areas/ING RadGridExport.csv') }}" class="btn btn-primary btn-sm" target="_blank">Leer</a>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <span>Archivo 3 - Ciencias Exactas</span>
+                            <a href="{{ url_for('static', filename='datos/csv/areas/CIENCIAS_EXA RadGridExport.csv') }}" class="btn btn-primary btn-sm" target="_blank">Leer</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-md-12 text-center">
+            <a href="/logout" class="btn btn-danger">Cerrar sesión</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

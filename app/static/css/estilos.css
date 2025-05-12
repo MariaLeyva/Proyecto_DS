@@ -1,118 +1,124 @@
-/* Resetear márgenes y paddings predeterminados */
-* {
+:root {
+    --primary-color: #003366; /* Azul institucional */
+    --secondary-color: #FFD700; /* Dorado institucional */
+    --text-color: #333333;
+}
+
+/* General Styles */
+body {
+    font-family: 'Tahoma', sans-serif;
+    background-color: #f8f9fa; /* Light background for consistency */
+    color: #212529; /* Dark text for readability */
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-/* Fondo y color de texto */
-body {
-    font-family: Tahoma, sans-serif;
-    background-color: #ddeeff;  /* Color de fondo claro */
-    color: #333;  /* Color de texto oscuro */
-}
-
-/* Barra de navegación */
 .navbar {
-    background-color: #003366; /* Azul institucional de Unison */
+    margin-bottom: 2rem;
+    background-color: var(--primary-color); /* Azul institucional */
+    color: white;
+}   
+
+.navbar .nav-link {
+    color: white;
 }
 
-.navbar-brand img {
-    width: 40px;
-    height: 40px;
+.navbar .nav-link:hover {
+    color: var(--secondary-color);
 }
 
-/* Títulos principales */
-h1 {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #003366; /* Azul institucional */
-    margin-bottom: 20px;
+h1, h2, h3, h4, h5, h6 {
+    color: var(--primary-color);
 }
 
-/* Títulos de segundo nivel */
-h2 {
-    font-size: 1.5rem;
-    color: #003366;
-}
-
-/* Alineación central para párrafos y textos */
-.text-center {
-    text-align: center;
-}
-
-/* Contenedor principal */
 .container {
-    margin-top: 40px;
+    max-width: 1200px;
 }
 
-/* Estilos de los botones */
-.btn {
-    background-color: #003366;
-    color: white;
-    border-radius: 5px;
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f9f9f9;
 }
 
-.btn:hover {
-    background-color: #005288;
-}
-
-/* Barra de búsqueda */
-.input-group {
-    margin-bottom: 30px;
-}
-
-/* Estilo de las tablas */
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-th, td {
-    padding: 10px;
-    text-align: left;
-}
-
-th {
-    background-color: #003366;
-    color: white;
-}
-
-td {
-    background-color: #f1f1f1;
-}
-
-table tr:nth-child(even) {
+.table-striped tbody tr:nth-of-type(even) {
     background-color: #e9ecef;
 }
 
-table tbody tr:hover {
-    background-color: #d6d8db;
-    cursor: pointer;
+/* Hero Section */
+.jumbotron {
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    margin-bottom: 4rem; /* Add extra space below the Hero section */
 }
 
-/* Estilos para los enlaces */
+/* Cards */
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+    border: 1px solid var(--primary-color); /* Azul institucional */
+    margin-bottom: 2rem; /* Add space between cards */
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-header {
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: var(--primary-color); /* Azul institucional */
+    color: white;
+}
+
+.card-body ul li {
+    color: var(--text-color);
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-color); /* Azul institucional */
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Sticky Footer */
+html {
+    height: 100%;
+}
+
+main {
+    flex: 1;
+}
+
+/* Buttons */
+.btn {
+    background-color: var(--primary-color); /* Azul institucional */
+    color: white;
+    border: none;
+}
+
+.btn:hover {
+    background-color: var(--secondary-color); /* Dorado institucional */
+    color: var(--text-color);
+}
+
+/* Links */
 a {
-    text-decoration: none;
-    color: #003366;
+    color: var(--primary-color);
 }
 
 a:hover {
-    color: #005288;
+    color: var(--secondary-color);
 }
 
-/* Espaciado entre los elementos */
-.mt-4 {
-    margin-top: 40px;
-}
-
-/* Estilos de pie de página o créditos */
-footer {
-    background-color: #003366;
-    color: white;
-    padding: 20px 0;
-    text-align: center;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+/* Add spacing between sections */
+section {
+    margin-bottom: 3rem; /* Add space below each section */
 }

@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2 class="mb-4">Revistas que comienzan con "{{ letra }}"</h2>
+    
+    {% if revistas %}
+        <div class="list-group">
+            {% for titulo, info in revistas.items() %}
+                <a href="{{ url_for('revista_detalle', titulo=titulo) }}" class="list-group-item list-group-item-action">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">{{ titulo }}</h5>
+                    </div>
+                    {% if info.areas %}
+                        <p class="mb-1"><strong>Áreas:</strong> {{ info.areas|join(', ') }}</p>
+                    {% endif %}
+                    {% if info.catalogos %}
+                        <p class="mb-1"><strong>Catálogos:</strong> {{ info.catalogos|join(', ') }}</p>
+                    {% endif %}
+                    {% if scimagojr.get(titulo) %}
+                        <small class="text-muted">
+                            SJR: {{ scimagojr[titulo].get('SJR', 'N/A') }} |
+                            H-index: {{ scimagojr[titulo].get('H index', 'N/A') }}
+                        </small>
+                    {% endif %}
+                </a>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="alert alert-info">
+            No se encontraron revistas que comiencen con la letra "{{ letra }}".
+        </div>
+    {% endif %}
+
+    <div class="mt-4">
+        <a href="{{ url_for('explorar') }}" class="btn btn-secondary">Volver a Explorar</a>
+    </div>
+</div>
+{% endblock %}

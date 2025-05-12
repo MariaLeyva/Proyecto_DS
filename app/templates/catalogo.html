@@ -1,29 +1,18 @@
 {% extends "base.html" %}
 
-{% block title %}Explorar - Sistema de Exploración de Revistas UNISON{% endblock %}
+{% block title %}{{ catalogo }} - Sistema de Exploración de Revistas UNISON{% endblock %}
 
 {% block content %}
 <div class="row">
     <div class="col-md-12">
-        <h1 class="mb-4">Explorar por Letra</h1>
+        <h1 class="mb-4">Revistas en {{ catalogo }}</h1>
         
-        <div class="letter-grid d-flex flex-wrap justify-content-center gap-2 mb-5">
-            {% for letra in 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' %}
-            <a href="{{ url_for('explorar_letra', letra=letra) }}" 
-               class="btn {% if letra == request.view_args.get('letra', '').upper() %}btn-primary{% else %}btn-outline-primary{% endif %}">
-                {{ letra }}
-            </a>
-            {% endfor %}
-        </div>
-        
-        {% if request.view_args.get('letra') %}
         <div class="table-responsive">
             <table class="table table-striped" id="revistasTable">
                 <thead>
                     <tr>
                         <th>Título de la Revista</th>
                         <th>H-Index</th>
-                        <th>Catálogos</th>
                         <th>Áreas</th>
                     </tr>
                 </thead>
@@ -35,14 +24,6 @@
                         </td>
                         <td>
                             {{ scimagojr.get(titulo, {}).get('h_index', 'N/A') }}
-                        </td>
-                        <td>
-                            {% for catalogo in info['catalogos'] %}
-                            <a href="{{ url_for('catalogo_detalle', catalogo=catalogo) }}" 
-                               class="badge bg-secondary text-decoration-none me-1">
-                                {{ catalogo }}
-                            </a>
-                            {% endfor %}
                         </td>
                         <td>
                             {% for area in info['areas'] %}
@@ -57,17 +38,11 @@
                 </tbody>
             </table>
         </div>
-        {% else %}
-        <div class="text-center">
-            <p class="lead">Selecciona una letra para ver las revistas que comienzan con ella.</p>
-        </div>
-        {% endif %}
     </div>
 </div>
 {% endblock %}
 
 {% block scripts %}
-{% if request.view_args.get('letra') %}
 <script>
 $(document).ready(function() {
     $('#revistasTable').DataTable({
@@ -79,5 +54,4 @@ $(document).ready(function() {
     });
 });
 </script>
-{% endif %}
 {% endblock %}
